@@ -32,6 +32,7 @@ python3 scripts/ops_loop.py --interval 30
 - System design: `hf_spaces_zero_budget_blueprint.md`
 - Japanese runbook: `docs/NEXT_STEPS_JA.md`
 - Governance rules: `constitution/rules.md`
+- Action plan (JA): `docs/NEXT_ACTION_PLAN_JA.md`
 
 
 ## No-PC mode (GitHub Actions)
@@ -50,3 +51,10 @@ If you want to run without a local PC at all:
 - Worker: `scripts/hf_space_worker.py`
 - Dashboard app: `hf_space/app.py`
 - Guide: `hf_space/README.md` and `docs/NO_PC_MODE_JA.md`
+
+
+## Dispatch mission from GitHub
+
+You can dispatch a new mission via:
+- Workflow: `.github/workflows/mission-dispatch.yml`
+- Script: `scripts/new_mission.py`

@@ -54,3 +54,8 @@ python3 scripts/ops_loop.py --interval 30
 ## PCがない場合
 
 `docs/NO_PC_MODE_JA.md` の手順で、GitHub Actions定期実行に切り替えてください。
+
+
+## GitHubから直接ミッション投入
+
+Actionsの `Mission Dispatch (GitHub -> inbox)` を使うと、ブラウザだけで `tasks/inbox/*.json` を作成できます。

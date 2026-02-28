@@ -1,0 +1,47 @@
+name: Mission Dispatch (GitHub -> inbox)
+
+on:
+  workflow_dispatch:
+    inputs:
+      mission_id:
+        description: "Mission ID (e.g. companyA-004)"
+        required: true
+        type: string
+      command_1:
+        description: "First command"
+        required: true
+        type: string
+      command_2:
+        description: "Second command (optional)"
+        required: false
+        type: string
+      command_3:
+        description: "Third command (optional)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  create-mission:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Create mission JSON
+        run: |
+          python3 scripts/new_mission.py \
+            --mission-id "${{ inputs.mission_id }}" \
+            --command "${{ inputs.command_1 }}" \
+            $( [ -n "${{ inputs.command_2 }}" ] && echo --command "${{ inputs.command_2 }}" ) \
+            $( [ -n "${{ inputs.command_3 }}" ] && echo --command "${{ inputs.command_3 }}" )
+      - name: Commit mission
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tasks/inbox/*.json
+          git commit -m "chore: dispatch mission ${{ inputs.mission_id }}"
+          git push
