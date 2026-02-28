@@ -1,0 +1,20 @@
+{
+  "agent_id": "company-A-research",
+  "role": "market-research",
+  "workspace": "./workspace/company-A-research",
+  "loop": {
+    "max_steps_per_run": 5,
+    "cooldown_seconds": 60,
+    "max_retries": 3
+  },
+  "memory": {
+    "file": "./memory/company-A-research.json"
+  },
+  "logs": {
+    "file": "./logs/company-A-research.jsonl"
+  },
+  "artifacts_dir": "./artifacts/company-A-research",
+  "allowed_commands": ["echo", "pwd", "ls", "python", "python3", "git"],
+  "protected_actions": ["git push", "rm"],
+  "requires_human_approval_token": "APPROVED"
+}
