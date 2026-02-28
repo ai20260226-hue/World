@@ -1,0 +1,8 @@
+{
+  "mission_id": "companyA-scan-001",
+  "commands": [
+    "pwd",
+    "echo mission-start",
+    "python -V"
+  ]
+}

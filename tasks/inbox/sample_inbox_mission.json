@@ -1,0 +1,8 @@
+{
+  "mission_id": "companyA-inbox-001",
+  "commands": [
+    "pwd",
+    "echo inbox-run",
+    "python3 -V"
+  ]
+}

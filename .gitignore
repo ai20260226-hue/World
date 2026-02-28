@@ -1,0 +1,9 @@
+# Runtime outputs
+logs/*.jsonl
+logs/*.log
+memory/*.json
+artifacts/**/*.md
+
+# Python cache
+__pycache__/
+*.pyc
